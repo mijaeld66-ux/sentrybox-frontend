@@ -1,0 +1,23 @@
+{
+  "notice": "Datos completamente ficticios. No proceden de ENAHO ni del modelo de Machine Learning.",
+  "movements": [
+    {"id":"demo-01","type":"ingreso","description":"Ventas del día · abarrotes","cents":38600,"date":"2026-11-02","category":"Ventas","payment":"Efectivo"},
+    {"id":"demo-02","type":"gasto","description":"Reposición de arroz y azúcar","cents":24500,"date":"2026-11-02","category":"Mercadería","payment":"Transferencia"},
+    {"id":"demo-03","type":"ingreso","description":"Ventas por Yape","cents":27450,"date":"2026-11-04","category":"Ventas","payment":"Yape"},
+    {"id":"demo-04","type":"ingreso","description":"Ventas del fin de semana","cents":52300,"date":"2026-11-07","category":"Ventas","payment":"Efectivo"},
+    {"id":"demo-05","type":"gasto","description":"Recibo de electricidad","cents":14800,"date":"2026-11-07","category":"Servicios","payment":"Yape"},
+    {"id":"demo-06","type":"ingreso","description":"Ventas de bebidas y snacks","cents":31200,"date":"2026-11-09","category":"Ventas","payment":"Plin"},
+    {"id":"demo-07","type":"gasto","description":"Compra de bebidas al proveedor","cents":32000,"date":"2026-11-10","category":"Mercadería","payment":"Efectivo"},
+    {"id":"demo-08","type":"ingreso","description":"Ventas de la mañana","cents":44800,"date":"2026-11-11","category":"Ventas","payment":"Efectivo"},
+    {"id":"demo-09","type":"ingreso","description":"Ventas por billetera digital","cents":28500,"date":"2026-11-13","category":"Ventas","payment":"Yape"},
+    {"id":"demo-10","type":"gasto","description":"Transporte de mercadería","cents":3500,"date":"2026-11-14","category":"Transporte","payment":"Efectivo"},
+    {"id":"demo-11","type":"ingreso","description":"Ventas del sábado","cents":61200,"date":"2026-11-14","category":"Ventas","payment":"Efectivo"},
+    {"id":"demo-12","type":"gasto","description":"Reposición de productos de limpieza","cents":18750,"date":"2026-11-16","category":"Mercadería","payment":"Transferencia"},
+    {"id":"demo-13","type":"ingreso","description":"Pedido de abarrotes","cents":35600,"date":"2026-11-17","category":"Ventas","payment":"Transferencia"},
+    {"id":"demo-14","type":"ingreso","description":"Ventas por Plin","cents":19200,"date":"2026-11-18","category":"Ventas","payment":"Plin"},
+    {"id":"demo-15","type":"gasto","description":"Compra de lácteos","cents":21600,"date":"2026-11-19","category":"Mercadería","payment":"Yape"},
+    {"id":"demo-16","type":"ingreso","description":"Ventas de la tarde","cents":42800,"date":"2026-11-19","category":"Ventas","payment":"Yape"},
+    {"id":"demo-17","type":"gasto","description":"Bolsas y material de empaque","cents":2800,"date":"2026-11-20","category":"Otros gastos","payment":"Efectivo"},
+    {"id":"demo-18","type":"ingreso","description":"Ventas de abarrotes","cents":32700,"date":"2026-11-20","category":"Ventas","payment":"Efectivo"}
+  ]
+}

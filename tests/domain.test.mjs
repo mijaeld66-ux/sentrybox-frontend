@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { parseCents, validate, totals, filterRows, isMovement, csvCell } from '../js/domain.js';
+const raw={type:'ingreso',description:'Venta de arroz',amount:'25,50',date:'2026-11-20',category:'Ventas',payment:'Yape'};
+test('los montos se calculan en céntimos sin errores de coma flotante',()=>{assert.equal(parseCents('25,50'),2550);assert.equal(parseCents('0.10'),10);assert.equal(parseCents('10.999'),null);assert.equal(parseCents('1e3'),null);assert.equal(parseCents('-4'),null);});
+test('valida un movimiento y rechaza fecha futura, monto cero y categoría incompatible',()=>{assert.deepEqual(validate(raw,'2026-11-20').errors,{});const bad=validate({...raw,amount:'0',date:'2026-11-21',category:'Servicios'},'2026-11-20');assert.deepEqual(Object.keys(bad.errors).sort(),['amount','category','date']);assert.ok(validate({...raw,date:'2026-02-30'},'2026-11-20').errors.date);});
+test('los datos ficticios son válidos y sus identificadores son únicos',async()=>{const data=JSON.parse(await readFile(new URL('../data/movements.json',import.meta.url),'utf8'));assert.equal(data.movements.length,18);assert.ok(data.movements.every(isMovement));assert.equal(new Set(data.movements.map(m=>m.id)).size,18);});
+test('el saldo descuenta los gastos y admite saldo negativo',()=>{assert.deepEqual(totals([{type:'ingreso',cents:10},{type:'ingreso',cents:20},{type:'gasto',cents:100}]),{ingreso:30,gasto:100,saldo:-70});assert.deepEqual(totals([]),{ingreso:0,gasto:0,saldo:0});});
+test('los filtros combinan texto sin tildes, medio de pago y fechas inclusivas',()=>{const rows=[{id:'a',description:'Compra de mercadería',category:'Mercadería',payment:'Yape',date:'2026-11-20',type:'gasto'},{id:'b',description:'Compra de mercadería',category:'Mercadería',payment:'Efectivo',date:'2026-11-19',type:'gasto'}];assert.deepEqual(filterRows(rows,{search:'mercaderia',payment:'Yape',from:'2026-11-20',to:'2026-11-20'}).map(m=>m.id),['a']);assert.equal(filterRows(rows,{type:'ingreso'}).length,0);});
+test('CSV escapa comillas y neutraliza fórmulas de hoja de cálculo',()=>{assert.equal(csvCell('Venta "pan"'),'"Venta ""pan"""');assert.equal(csvCell('=1+1'),'"\'=1+1"');});
