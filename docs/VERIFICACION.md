@@ -5,8 +5,10 @@
 - Seis pruebas automáticas aprobadas con `node --test`.
 - Sintaxis de los módulos de JavaScript comprobada con `node --check`.
 - El servidor local inició correctamente en el puerto 4173.
-- La vista previa no pudo abrirse: el navegador devolvió un error de conexión y el entorno bloqueó la comprobación HTTP local. No se ha completado una revisión visual ni una prueba de interacción de extremo a extremo.
-- No se han ejecutado Lighthouse o axe ni se han realizado pruebas con participantes. Las comprobaciones manuales que siguen son tareas pendientes, no resultados obtenidos.
+- El código de esta versión quedó en GitHub en la rama `main`.
+- La versión actual se abrió en Chrome con anchos emulados de 390, 768 y 1440 px. Se inspeccionaron Resumen, Registrar movimiento e Historial. Las tres vistas mantuvieron el contenido de la página dentro del ancho visible. El desplazamiento de las tablas se mantiene en su contenedor.
+- Se comprobó el cambio entre las categorías de Ingreso y Gasto, la validación del formulario vacío y el registro de un gasto de Mercadería con importe S/ 25,50. Al abrir ese movimiento para editarlo, se conservaron el tipo, la categoría y el importe.
+- La revisión del alcance de esta entrega corresponde al análisis técnico. La evaluación con participantes y los informes de Lighthouse y axe se registrarán cuando se realicen.
 
 ## Pruebas automáticas
 

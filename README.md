@@ -52,7 +52,7 @@ Ejecuta `npm test`. Consulta las tareas de verificación manual en `docs/VERIFIC
 
 El código está preparado para GitHub Pages, Netlify o Vercel como sitio estático, sin compilación. En GitHub Pages, publica la raíz de esta carpeta desde la rama elegida. No es necesario subir `node_modules`.
 
-El requisito de varios commits debe cumplirse con avances reales. No se han creado commits retroactivos ni se ha subido a una cuenta de GitHub. Puedes comenzar con esta v1 y registrar después las auditorías, correcciones y mejoras.
+La entrega EC2 está disponible en el [repositorio de SentryBox](https://github.com/mijaeld66-ux/sentrybox-frontend). Los siguientes commits registrarán cambios de implementación y los resultados de su verificación.
 
 ## Pendientes académicos
 
